@@ -5,29 +5,30 @@
   box-sizing: border-box;
 }
 
+/* 画面ど真ん中 */
 body {
-  background: #fff;
-  margin: 0;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* 横中央 */
+  align-items: center;     /* 縦中央 */
+  background: #fff;
   font-family: Helvetica, Arial, sans-serif;
-  overflow: hidden;
 }
 
+/* ギャラリー */
 .gallery {
   width: min(900px, 80vw);
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* ← ここ重要 */
   gap: 10px;
 }
 
-/* 各アイテム */
+/* アイテム */
 .item {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   display: block;
+  position: relative;
 }
 
 /* 画像 */
@@ -35,49 +36,94 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* 追加 */
-
-.item {
-  position: relative; /* これだけ追加 */
-}
-
-/* 数字 */
-.number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 25px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  font-weight: bold;
-    z-index: 2;
-}
-
-/* 画像を少し暗く */
+/* ホバー暗く */
 .item::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0);
-  transition: background 0.3s ease;
-}
-
-/* hover時 */
-.item:hover .number {
-  opacity: 1;
+  transition: 0.3s;
 }
 
 .item:hover::after {
-  background: rgba(0, 0, 0, 0.374);
-    z-index: 1;
+  background: rgba(0,0,0,0.35);
+}
+/* テキスト配置 */
+.text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center; /* 縦中央 */
+  align-items: center;     /* ← これに変更 */
+
+  padding: 16px;
+  color: #fff;
+  z-index: 2;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+/* 基本：本文は左 */
+/* タイトル中央 */
+.title {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em; /* ← ちょい広げる */
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6); /* ← これ重要 */
 }
 
-.first-item {
-  visibility: hidden;
+
+/* 上2つは全部中央 */
+.center-text .text {
+  align-items: center;
 }
+
+.center-text .text p {
+  text-align: center;
+}
+
+/* ホバーで表示 */
+.item:hover .text {
+  opacity: 1;
+}
+
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding-top: 10px;
+  z-index: 10;
+}
+
+
+.nav {
+  display: flex;
+  gap: 0px; /* ボタン間の余白 */
+}
+
+/* ボタン */
+.nav a {
+  display: inline-block; /* ← 文字の長さでサイズ変わる */
+
+  background: #c5c5c5; /* グレー */
+  color: #000000;
+
+  padding: 8px 18px;
+  font-size: 16px;
+  text-decoration: none;
+  border: 1px solid #fff; /* ← これ追加 */
+  transition: 0.3s;
+}
+
+/* ホバーで反転 */
+.nav a:hover {
+  background: #5e5e5e;
+  color: #ffffff;
+}
+

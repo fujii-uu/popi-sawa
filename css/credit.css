@@ -1,0 +1,76 @@
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding-top: 10px;
+  z-index: 10;
+}
+
+
+.nav {
+  display: flex;
+  gap: 0px; /* ボタン間の余白 */
+}
+
+/* ボタン */
+.nav a {
+  display: inline-block; /* ← 文字の長さでサイズ変わる */
+
+  background: #c5c5c5; /* グレー */
+  color: #000000;
+
+  padding: 8px 18px;
+  font-size: 16px;
+  text-decoration: none;
+  border: 1px solid #fff; /* ← これ追加 */
+  transition: 0.3s;
+}
+
+/* ホバーで反転 */
+.nav a:hover {
+  background: #5e5e5e;
+  color: #ffffff;
+}
+
+/* Creditページ全体 */
+.credit {
+  width: min(700px, 90vw);
+  margin: 0; /* ← これに変更 */
+  text-align: left;
+}
+/* 各作品 */
+.credit-item {
+  margin-bottom: 40px;
+}
+
+/* タイトル */
+.credit-item h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* キャスト */
+.credit-item p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.label {
+  font-size: 11px;
+  opacity: 0.5;
+  margin-right: 8px;
+  letter-spacing: 0.05em;
+}
+
+.main {
+  height: calc(100vh - 60px); /* ← ヘッダーの高さ分引く */
+  margin-top: 60px;
+  display: flex;
+  justify-content: center; /* 横中央 */
+  align-items: center;     /* 縦中央 */
+}
