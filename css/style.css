@@ -70,38 +70,39 @@ body {
 
 .site-header {
   position: fixed;
-  top: 0;
+  bottom: 0;   /* ← 下に固定 */
   left: 0;
-
-  padding-top: 0px;
+  padding: 15px;
   z-index: 10;
 }
 
 
 .nav {
   display: flex;
-  gap: 1px; /* ボタン間の余白 */
+  gap: 0px; /* ボタン間の余白 */
 }
 
-/* ボタン */
-.nav a {
-  display: inline-block; /* ← 文字の長さでサイズ変わる */
 
-  background: #c5c5c5; /* グレー */
-  color: #000000;
-  padding: 5px 18px;
+.nav a {
+  display: inline-block;
+
+  color: #000;
+  background: none;
+
+  padding: 5px 0;
   font-size: 13px;
   text-decoration: none;
-  border: 1px solid #ffffff00; /* ← これ追加 */
-  transition: 0.3s;
+
+  margin-top: 15px;
+  margin-left: 15px;
+
+  transition: color 0.3s ease;
 }
 
-/* ホバーで反転 */
+/* ホバーは色だけ変える */
 .nav a:hover {
-  background: #5e5e5e;
-  color: #ffffff;
+  color: #dbdbdb;
 }
-
 .modal {
   display: none;
   position: fixed;
