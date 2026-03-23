@@ -11,7 +11,7 @@
 
 .nav {
   display: flex;
-  gap: 0px; /* ボタン間の余白 */
+  gap: 1px; /* ボタン間の余白 */
 }
 
 /* ボタン */
@@ -20,11 +20,10 @@
 
   background: #c5c5c5; /* グレー */
   color: #000000;
-
-  padding: 8px 18px;
-  font-size: 16px;
+  padding: 5px 18px;
+  font-size: 13px;
   text-decoration: none;
-  border: 1px solid #fff; /* ← これ追加 */
+  border: 1px solid #ffffff00; /* ← これ追加 */
   transition: 0.3s;
 }
 
@@ -45,19 +44,27 @@
   margin-bottom: 40px;
 }
 
+.title {
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 2 2px 8px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.8);
+}
 /* タイトル */
 .credit-item h2 {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 8px;
   letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.8);
 }
 
 /* キャスト */
 .credit-item p {
   font-size: 13px;
   line-height: 1.8;
-  color: #333;
+  color: #fbfbfb;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.8);
+
 }
 
 .label {
