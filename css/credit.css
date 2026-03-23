@@ -69,9 +69,10 @@
 
 .label {
   font-size: 11px;
-  opacity: 0.5;
+  opacity: 0.8;
   margin-right: 8px;
   letter-spacing: 0.05em;
+  color: #ffffff;
 }
 
 .main {
