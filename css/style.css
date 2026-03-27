@@ -138,4 +138,9 @@ body {
     bottom: auto; /* ← 下固定を解除 */
     left: 0;
   }
+
+    .gallery {
+    grid-template-columns: repeat(2, 1fr); /* ← 2列にする */
+    width: 90vw; /* ← 少し広げる */
+  }
 }
