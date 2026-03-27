@@ -131,3 +131,11 @@ body {
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .site-header {
+    top: 0;
+    bottom: auto; /* ← 下固定を解除 */
+    left: 0;
+  }
+}
